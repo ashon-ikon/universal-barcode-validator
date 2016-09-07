@@ -1,0 +1,14 @@
+{
+    "name": "theiconic/universal-barcode-validator",
+    "description": "Validates EAN-12/UPC-13 barcodes",
+    "type": "library",
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Yinka Asonibare",
+            "email": "yinka.asonibare@theiconic.com.au"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
