@@ -25,7 +25,7 @@ class Validator implements ValidatorInterface
      */
     public function addValidatorType(ValidatorTypeInterface $type)
     {
-        $this->validators[$type->getTypeName()] = $type;
+        $this->validators[$type->getTypeName()] = $type; // There can only be one validator type in collection
     }
 
     /**
@@ -36,11 +36,13 @@ class Validator implements ValidatorInterface
         $matchFound = false;
         foreach ($this->getRegisteredValidators() as $validator) {
 
+            // Only run one matching validator
             if ($validator->matchesType($code)) {
                 if (! $validator->validate($code)) {
                     $this->errors = array_merge($this->errors, $validator->getMessages());
                 }
                 $matchFound = true;
+                break;
             }
 
         }

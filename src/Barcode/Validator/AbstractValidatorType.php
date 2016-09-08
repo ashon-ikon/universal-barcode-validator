@@ -48,7 +48,7 @@ abstract class AbstractValidatorType implements ValidatorTypeInterface
      */
     public function setMessages($messages)
     {
-        $this->messages = []; // Empty is out
+        $this->messages = []; // Empty it out
         if (is_array($messages) || $messages instanceof \Traversable) {
             foreach ($messages as $message) {
                 $this->addMessage($message);
